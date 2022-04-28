@@ -33,6 +33,6 @@ export default Manifest({
   description: "Create issues in Github",
   icon: "assets/icon.png",
   functions: [CreateGithubIssue],
-  outgoingDomains: [],
+  outgoingDomains: ["api.github.com"],
   botScopes: ["commands", "chat:write", "chat:write.public"],
 });
