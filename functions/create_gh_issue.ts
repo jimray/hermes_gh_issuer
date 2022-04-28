@@ -2,7 +2,9 @@ import type { FunctionHandler } from "deno-slack-sdk/types.ts";
 
 // deno-lint-ignore no-explicit-any
 const createGHIssue: FunctionHandler<any, any> = async ({ inputs, env }) => {
-  const oauth_token = "token " + env["GH_TOKEN"];
+  // const oauth_token = "token " + env["GH_TOKEN"];
+  // const oauth_token = "token " + ${env["GH_TOKEN"]};
+  const oauth_token = `token ${env["GH_TOKEN"]}`;
 
   const response = await fetch(
     "https://api.github.com/repos/jimray/issues_demo/issues",
